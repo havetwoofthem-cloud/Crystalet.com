@@ -1,0 +1,51 @@
+@import url("https://googleapis.com");
+* {box-sizing:border-box;font-family:"Fredoka",sans-serif;user-select:none;margin:0;padding:0}
+body{background-color:#85d7ff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:60px;height:100vh;position:relative}
+.custom-bg{width:100%;height:100%;pointer-events:none;z-index:0;inset:0;position:absolute}
+.canvas-panel{position:absolute;width:100%;inset:0;height:100%}
+.geo-a{clip-path:polygon(0% 0%,21.5% 0%,21.5% 30.5%,0% 25%);background:#ffffff}
+.geo-b{background:#5cd6ff;clip-path:polygon(21.5% 0%,48.5% 0%,43.5% 19%,21.5% 33%)}
+.geo-c{background:#00aaff;clip-path:polygon(67.5% 16%,100% 16%,100% 39.5%)}
+.geo-d{clip-path:polygon(43.5% 19%,77.5% 39.5%,47% 85%,39% 58%);background:#d6f5ff}
+.geo-e{background:#ffffff;clip-path:polygon(43.5% 19%,39% 58%,21.5% 63.5%)}
+.geo-f{clip-path:polygon(0% 32.5%,21.5% 33%,21.5% 63.5%,0% 57%);background:#00bfff}
+.geo-g{background:#00bcff;clip-path:polygon(21.5% 63.5%,39% 58%,47% 85%,28% 100%)}
+.geo-h{clip-path:polygon(77.5% 39.5%,100% 55.5%,100% 82.5%,67.5% 79%);background:#00bfff}
+.geo-i{background:#33c7ff;clip-path:polygon(67.5% 79%,100% 82.5%,100% 100%,54% 100%)}
+.geo-j{background:#6bd6ff;clip-path:polygon(0% 57%,21.5% 63.5%,28% 100%,0% 100%)}
+#weather-matrix{height:100%;width:100%;pointer-events:none;z-index:1;position:absolute;inset:0}
+.precipitation-node{top:-25px;position:absolute;color:#ffffff;opacity:0.85;animation:dynamicDrop linear infinite;filter:drop-shadow(2px 2px 0px #4ea8de)}
+@keyframes dynamicDrop{to{transform:translateY(105vh)}}
+.hero-block{max-width:600px;justify-content:center;display:flex;flex-direction:column;height:100%;z-index:2}
+h1{font-size:5.5rem;color:#ffffff;paint-order:stroke fill;-webkit-text-stroke:5px #4ea8de;line-height:1.1;margin-bottom:16px}
+p{color:#ffffff;-webkit-text-stroke:3px #4ea8de;paint-order:stroke fill;line-height:1.4;font-size:1.5rem;margin-bottom:35px}
+.action-grid{display:flex;gap:16px;flex-direction:column}
+.game-btn{-webkit-text-stroke:4px #4ea8de;paint-order:stroke fill;display:block;border-radius:12px;background-color:#56c1ff;font-weight:700;padding:12px 14px;width:260px;box-shadow:4px 4px 0px rgba(78,168,222,0.5);font-size:2.2rem;text-decoration:none;border:3.5px solid #ffffff;text-align:left;cursor:pointer;color:#ffffff;transition:all 0.1s ease}
+.game-btn:hover{background-color:#70cbff;transform:translateY(-2px);box-shadow:4px 6px 0px rgba(78,168,222,0.5)}
+.game-btn:active{transform:translateY(2px);box-shadow:2px 2px 0px rgba(78,168,222,0.5)}
+footer{text-index:9;text-align:right;z-index:2}
+footer a{-webkit-text-stroke:2px #4ea8de;paint-order:stroke fill;font-size:1rem;color:#ffffff;text-decoration:none}
+.fullscreen-view{z-index:999;align-items:center;display:none;justify-content:center;color:#ffffff;width:100%;height:100%;position:fixed;inset:0;flex-direction:column}
+.navigation-bar{position:absolute;top:20px;right:20px;display:flex;gap:12px}
+.secondary-btn{font-size:1.2rem;padding:6px 16px;-webkit-text-stroke:2px #4ea8de;border-radius:8px;width:auto;box-shadow:2px 2px 0px rgba(78,168,222,0.5)}
+.secondary-btn:hover{background-color:#70cbff}
+.interactive-form-holder{background-color:rgba(78,168,222,0.35);padding:30px;border-radius:16px;box-shadow:5px 5px 0px rgba(78,168,222,0.4);border:3.5px solid #ffffff;max-width:440px;align-items:center;display:flex;width:100%;flex-direction:column}
+.form-header-text{-webkit-text-stroke:4px #4ea8de;font-size:4rem;margin-bottom:25px;paint-order:stroke fill}
+.field-container{position:relative;width:100%;margin-bottom:15px}
+.user-input-box{background:rgba(255, 255, 255, 0.15);-webkit-text-stroke:1.5px #4ea8de;paint-order:stroke fill;font-weight:700;color:#ffffff;outline:none;width:100%;padding:14px 14px 14px 45px;border-radius:12px;font-size:1.2rem;border:3px solid #ffffff}
+.user-input-box::placeholder{color:rgba(255, 255, 255, 0.85);-webkit-text-stroke:1.5px #4ea8de;paint-order:stroke fill}
+.field-glyph{position:absolute;top:50%;width:20px;left:15px;fill:none;stroke:#ffffff;transform:translateY(-50%);height:20px}
+.consent-row{display:flex;gap:12px;margin-bottom:25px;paint-order:stroke fill;-webkit-text-stroke:1.5px #4ea8de;line-height:1.3;width:100%;font-size:0.95rem;align-items:flex-start}
+.consent-row input{cursor:pointer;margin-top:3px;width:18px;height:18px;accent-color:#56c1ff}
+.interactive-form-holder .game-btn{width:200px;text-align:center;font-size:1.8rem}
+.navigation-link-subtext{font-size:1rem;margin-top:20px;paint-order:stroke fill;-webkit-text-stroke:1.5px #4ea8de}
+.navigation-link-subtext span{cursor:pointer;text-decoration:underline;color:#ffffff}
+.user-dashboard-wrapper{max-width:1200px;padding:40px;width:100%;z-index:2}
+.profile-section{margin-bottom:40px}
+.username-display{-webkit-text-stroke:4px #4ea8de;font-size:4.5rem;line-height:1;font-weight:700;paint-order:stroke fill}
+.rank-badge-text{font-size:2rem;margin-top:5px;font-weight:600;color:#e0f7ff;paint-order:stroke fill;-webkit-text-stroke:2px #4ea8de}
+.metrics-header-title{font-size:3.5rem;margin-bottom:24px;paint-order:stroke fill;-webkit-text-stroke:3px #4ea8de}
+.metrics-layout-grid{display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+.metric-block-card{background:rgba(78,168,222,0.45);text-align:center;box-shadow:4px 4px 0px rgba(78,168,222,0.5);border:3.5px solid #ffffff;padding:24px;border-radius:16px}
+.metric-meta-title{margin-bottom:12px;text-transform:capitalize;font-size:1.2rem;color:#ffffff;paint-order:stroke fill;-webkit-text-stroke:1.5px #4ea8de}
+.metric-numeric-value{font-size:3rem;color:#ffffff;font-weight:700;paint-order:stroke fill;-webkit-text-stroke:3px #4ea8de}
