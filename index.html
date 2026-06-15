@@ -1,0 +1,103 @@
+<div class="custom-bg">
+<div class="canvas-panel geo-a"></div><div class="canvas-panel geo-b"></div>
+<div class="canvas-panel geo-c"></div><div class="canvas-panel geo-d"></div>
+<div class="canvas-panel geo-e"></div><div class="canvas-panel geo-f"></div>
+<div class="canvas-panel geo-g"></div><div class="canvas-panel geo-h"></div>
+<div class="canvas-panel geo-i"></div><div class="canvas-panel geo-j"></div>
+</div>
+
+<div id="weather-matrix"></div>
+
+<main id="home-view" class="hero-block">
+<h1>Crystalet</h1>
+<p>Developed By Jack, idea formulated by Zetix.</p>
+<div class="action-grid">
+<button class="game-btn" onclick="initiateRegistration()">Register</button>
+<a href="#" class="game-btn">Discord</a>
+</div>
+</main>
+
+<footer id="legal-footer"><a href="#">Terms of Service</a></footer>
+
+<section class="fullscreen-view" id="reg-modal">
+<div class="navigation-bar">
+<button onclick="returnToLanding()" class="game-btn secondary-btn">Back</button>
+</div>
+<div class="interactive-form-holder">
+<div class="form-header-text">Register</div>
+<div class="field-container">
+<svg class="field-glyph" viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+</svg>
+<input type="text" placeholder="Username" id="new-account-name" class="user-input-box" />
+</div>
+<div class="field-container">
+<svg class="field-glyph" viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<input type="password" id="new-account-secret" class="user-input-box" placeholder="Password" />
+</div>
+<div class="consent-row">
+<input type="checkbox" id="legal-consent-box" />
+<label for="legal-consent-box">I agree to the Terms of Service, I am over the age of 13, and I hold no liability or harm to the creators of this website.</label>
+</div>
+<button onclick="executeRegisterProcess()" class="game-btn">Register</button>
+<div class="navigation-link-subtext">Already have an account? <span onclick="switchToLoginWindow()">Login</span></div>
+</div>
+</section>
+
+<section id="auth-modal" class="fullscreen-view">
+<div class="navigation-bar">
+<button class="game-btn secondary-btn" onclick="returnToLanding()">Back</button>
+</div>
+<div class="interactive-form-holder">
+<div class="form-header-text">Login</div>
+<div class="field-container">
+<svg class="field-glyph" viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+</svg>
+<input id="existing-account-name" class="user-input-box" placeholder="Username" type="text" />
+</div>
+<div class="field-container">
+<svg class="field-glyph" viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<input class="user-input-box" placeholder="Password" type="password" id="existing-account-secret" />
+</div>
+<button class="game-btn" onclick="executeLoginProcess()">Login</button>
+<div class="navigation-link-subtext">Don't have an account? <span onclick="switchToRegisterWindow()">Register</span></div>
+</div>
+</section>
+
+<section class="fullscreen-view" id="dashboard-modal">
+<div class="navigation-bar">
+<button class="game-btn secondary-btn">Daily Rewards</button>
+<button class="game-btn secondary-btn">Profile Settings</button>
+<button onclick="processSessionLogOut()" class="game-btn secondary-btn">Log Out</button>
+</div>
+<div class="user-dashboard-wrapper">
+
+<div id="profile-name-target" class="username-display">Username</div>
+<div class="rank-badge-text">Basic</div>
+</div>
+<div class="metrics-header-title">Stats</div>
+<div class="metrics-layout-grid">
+<div class="metric-block-card">
+<div class="metric-meta-title">Tokens</div>
+<div class="metric-numeric-value">0</div>
+</div>
+<div class="metric-block-card">
+<div class="metric-meta-title">XP</div>
+<div class="metric-numeric-value">0</div>
+</div>
+<div class="metric-block-card">
+<div class="metric-meta-title">Packs Unlocked</div>
+<div class="metric-numeric-value">0</div>
+</div>
+<div class="metric-block-card">
+<div class="metric-meta-title">Crystals Unlocked</div>
+<div class="metric-numeric-value">0</div>
+</div>
+</div>
+</div>
+</section>
