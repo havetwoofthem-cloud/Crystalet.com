@@ -1,6 +1,6 @@
 var myUsername = "";
 var myPassword = "";
-var myCrystals = 12000;
+var myCrystals = 0;
 var myXP = 0;
 var myPacks = 0;
 var myItems = {};
