@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystalet | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <div class="bg-wrap">
+    <div class="shard s1"></div>
+    <div class="shard s2"></div>
+    <div class="shard s3"></div>
+    <div class="shard s4"></div>
+    <div class="shard s5"></div>
+    <div class="shard s6"></div>
+    <div class="shard s7"></div>
+    <div class="shard s8"></div>
+    <div class="shard s9"></div>
+    <div class="shard s10"></div>
+  </div>
+
+  <div id="snow-wrap"></div>
+
+  <div id="home-page" class="page-view">
+    <h1>Crystalet</h1>
+    <p>Developed By Jack, idea formulated by Zetix.</p>
+    <div class="home-btns">
+      <button class="btn" onclick="openRegister()">Register</button>
+      <button class="btn" onclick="openLogin()">Login</button>
+      <a href="https://discord.gg/dJ8HQV9W3x" target="_blank" class="btn" style="text-decoration:none;">Discord</a>
+    </div>
+    <footer><a href="#" onclick="openTOS()">Terms of Service</a></footer>
+  </div>
+
+  <div id="tos-screen" class="overlay-screen" style="display:none;">
+    <div class="back-btn-wrap">
+      <button class="btn btn-sm" onclick="showHome()">Back</button>
+    </div>
+    <div class="form-card" style="max-width:700px; text-align:left; overflow-y:auto; max-height:80vh;">
+      <div class="form-title" style="font-size:2.5rem; margin-bottom:20px;">Terms of Service</div>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;">Last Updated: June 2026</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>1. Acceptance</strong><br>By accessing or using Crystalet, you agree to these Terms. If you do not agree, do not use this site.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>2. Age Requirement</strong><br>You must be at least 13 years old to use Crystalet. Users under 13 are strictly prohibited.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>3. Prohibited Conduct</strong><br>You agree not to: harass or bully other users, attempt to exploit bugs for unfair gain, create alternate accounts to bypass bans (ban evasion will result in permanent removal), use cheats or automation tools, or post inappropriate content in chat.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>4. Account Responsibility</strong><br>You are responsible for keeping your credentials secure. Crystalet is not liable for unauthorized access to your account.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>5. Virtual Currency</strong><br>Crystals have no real-world monetary value and cannot be exchanged for real money. All purchases and trades are final.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>6. Moderation</strong><br>Moderators reserve the right to mute, timeout, or ban any user for violation of these terms. Decisions made by admins are final.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>7. Disclaimer</strong><br>Crystalet is provided as-is. The developers hold no liability for any data loss or damages resulting from use of this platform.</p>
+      <p style="-webkit-text-stroke:0; color:#fff; font-size:1rem; line-height:1.7; margin-bottom:12px;"><strong>8. Changes</strong><br>We may update these Terms at any time. Continued use after changes means you accept the updated Terms.</p>
+      <button class="btn btn-sm" style="margin:20px auto 0 auto; display:block;" onclick="showHome()">Close</button>
+    </div>
+  </div>
+
+  <div id="login-screen" class="overlay-screen" style="display:none;">
+    <div class="back-btn-wrap">
+      <button class="btn btn-sm" onclick="showHome()">Back</button>
+    </div>
+    <div class="form-card">
+      <div class="form-title">Log In</div>
+      <input type="text" id="login-user" class="text-input" placeholder="Username" autocomplete="off" />
+      <input type="password" id="login-pass" class="text-input" placeholder="Password" />
+      <button class="btn" style="margin:15px auto 10px auto;" onclick="doLogin()">Log In</button>
+      <span class="switch-link" onclick="openRegister()">Don't have an account? Register here.</span>
+    </div>
+  </div>
+
+  <div id="register-screen" class="overlay-screen" style="display:none;">
+    <div class="back-btn-wrap">
+      <button class="btn btn-sm" onclick="showHome()">Back</button>
+    </div>
+    <div class="form-card">
+      <div class="form-title">Register</div>
+      <input type="text" id="reg-user" class="text-input" placeholder="Username" autocomplete="off" />
+      <input type="password" id="reg-pass" class="text-input" placeholder="Password" />
+      <div class="check-wrap">
+        <input type="checkbox" id="reg-agree" />
+        <label for="reg-agree">I agree to the Terms of Service, I am over the age of 13, and I hold no liability or harm to the creators of this website.</label>
+      </div>
+      <button class="btn" style="margin:0 auto 10px auto;" onclick="doRegister()">Register</button>
+      <span class="switch-link" onclick="openLogin()">Already have an account? Log in here.</span>
+    </div>
+  </div>
+
+  <div id="account-screen" class="overlay-screen dash-layout" style="display:none;">
+
+    <div class="crystal-balance">
+      <span id="bal-display">0</span>
+      <div class="mini-crystal"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-logo">Crystalet</div>
+      <button id="nav-profile" class="nav-btn active-nav" onclick="goTab('profile')">Profile</button>
+      <button id="nav-market" class="nav-btn" onclick="goTab('market')">Market</button>
+      <button id="nav-inventory" class="nav-btn" onclick="goTab('inventory')">Inventory</button>
+      <button id="nav-trading" class="nav-btn" onclick="goTab('trading')">Trading</button>
+      <button id="nav-chat" class="nav-btn" onclick="goTab('chat')">Chat</button>
+      <div class="sidebar-bottom">
+        <button class="btn btn-sm side-action" onclick="claimDaily()">Daily Rewards</button>
+        <button id="nav-settings" class="btn btn-sm side-action" onclick="goTab('settings')">Settings</button>
+        <button class="btn btn-sm side-action logout-red" onclick="doLogout()">Log Out</button>
+      </div>
+    </div>
+
+    <div class="dash-view">
+
+      <div id="tab-profile" class="tab active-tab">
+        <div class="profile-top">
+          <div class="name-big" id="show-name">Username</div>
+          <div class="title-small">Basic</div>
+          <button class="btn btn-sm" onclick="viewUserShortcut()">View User</button>
+        </div>
+        <div class="stats-wrap">
+          <div class="stats-label">Stats</div>
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="s-label">Crystals</div>
+              <div class="s-val" id="s-crystals">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="s-label">XP</div>
+              <div class="s-val" id="s-xp">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="s-label">Packs Unlocked</div>
+              <div class="s-val" id="s-packs">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="s-label">Crystables Unlocked</div>
+              <div class="s-val" id="s-crystables">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-market" class="tab">
+        <h2 class="tab-title">Market</h2>
+        <p class="tab-sub">Spend your Crystals to unlock items!</p>
+        <div class="market-grid">
+          <div class="pack-card">
+            <div class="pack-art blue-pack">
+              <div class="pack-crystal"></div>
+            </div>
+            <div class="pack-name">Crystal Pack</div>
+            <div class="pack-price">25 Crystals</div>
+            <button class="btn btn-sm" style="margin:0 auto;" onclick="openPack(25)">Open</button>
+          </div>
+          <div class="pack-card">
+            <div class="pack-art purple-pack">
+              <div class="pack-crystal purple-crystal"></div>
+            </div>
+            <div class="pack-name">Prism Pack</div>
+            <div class="pack-price">50 Crystals</div>
+            <button class="btn btn-sm" style="margin:0 auto;" onclick="openPack(50)">Open</button>
+          </div>
+          <div class="pack-card">
+            <div class="pack-art gold-pack">
+              <div class="pack-crystal gold-crystal"></div>
+            </div>
+            <div class="pack-name">Legendary Pack</div>
+            <div class="pack-price">150 Crystals</div>
+            <button class="btn btn-sm" style="margin:0 auto;" onclick="openPack(150)">Open</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-inventory" class="tab">
+        <h2 class="tab-title">Inventory</h2>
+        <p class="tab-sub">Your collected Crystables.</p>
+        <div class="inv-grid" id="inv-list">
+          <div class="empty-msg">No items yet! Go open some packs.</div>
+        </div>
+      </div>
+
+      <div id="tab-trading" class="tab">
+        <h2 class="tab-title">Trading</h2>
+        <p class="tab-sub">Trade Crystables with other collectors.</p>
+        <div class="trade-search">
+          <input type="text" id="trade-search-input" placeholder="Search Player Username..." autocomplete="off" />
+          <button class="btn btn-sm" onclick="searchTradeUser()">Search</button>
+        </div>
+        <div class="trade-area">
+          <div class="trade-col">
+            <div class="trade-name" id="trade-you-name">You</div>
+            <div class="trade-slots" id="your-slots">
+              <div class="trade-slot add-slot" onclick="addToTrade()">+ Add</div>
+              <div class="trade-slot locked-slot"></div>
+              <div class="trade-slot locked-slot"></div>
+              <div class="trade-slot locked-slot"></div>
+            </div>
+            <div class="trade-crystal-row">
+              <span>💎</span>
+              <input type="number" id="your-crystal-offer" value="0" min="0" oninput="capTradeInput(this)" />
+            </div>
+          </div>
+          <div class="trade-col">
+            <div class="trade-name" id="trade-them-name">Target Player</div>
+            <div class="trade-slots">
+              <div class="trade-slot locked-slot"></div>
+              <div class="trade-slot locked-slot"></div>
+              <div class="trade-slot locked-slot"></div>
+              <div class="trade-slot locked-slot"></div>
+            </div>
+            <div class="trade-crystal-row">
+              <span>💎</span>
+              <input type="number" value="0" disabled />
+            </div>
+          </div>
+        </div>
+        <div class="trade-footer">
+          <button class="btn trade-go-btn" onclick="sendTrade()">Send Trade</button>
+        </div>
+      </div>
+
+      <div id="tab-settings" class="tab">
+        <h2 class="tab-title">Settings</h2>
+        <p class="tab-sub">Manage your account.</p>
+        <div class="settings-wrap">
+          <button class="settings-row-btn logout-row" onclick="doLogout()">Log Out</button>
+          <div class="settings-section">
+            <h3 class="settings-heading">Account Management</h3>
+            <div class="settings-group">
+              <label class="settings-lbl">Change Username <span class="cost-tag">(Costs 5,000 Crystals)</span></label>
+              <div class="settings-inline">
+                <input type="text" id="new-username-input" placeholder="New Username" autocomplete="off" />
+                <button class="btn btn-sm" onclick="changeUsername()">Update</button>
+              </div>
+            </div>
+            <div class="settings-group">
+              <label class="settings-lbl">Change Password</label>
+              <div class="settings-inline">
+                <input type="password" id="new-password-input" placeholder="New Password" />
+                <button class="btn btn-sm" onclick="changePassword()">Update</button>
+              </div>
+            </div>
+            <div class="settings-group" style="margin-top:25px;">
+              <label class="settings-lbl">Discord Integration</label>
+              <button class="settings-row-btn discord-row" onclick="linkDiscord()">Link Account</button>
+              <p class="settings-hint">Connect your Crystalet account to use our Discord bot commands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-chat" class="tab chat-tab">
+        <div class="chat-wrap">
+          <div class="chat-log" id="chat-log"></div>
+          <div class="chat-bar">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendMsg()" />
+            <button class="btn btn-sm" onclick="sendMsg()">Send</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="reveal-screen" class="reveal-wrap" style="display:none;">
+    <div class="reveal-box">
+      <div id="mystery-box" class="mystery-box">
+        <div class="box-q">?</div>
+      </div>
+      <div id="reward-card" class="reward-card" style="display:none;">
+        <div class="reward-crystal-wrap" id="reward-crystal-area">
+          <div class="reward-crystal"></div>
+        </div>
+        <div class="reward-name" id="reward-name-text">Item</div>
+        <div class="reward-rarity" id="reward-rarity-text">Common</div>
+      </div>
+      <div class="reveal-btns">
+        <button id="ok-btn" class="btn btn-sm" style="display:none; font-size:1.4rem; padding:10px 32px;" onclick="closeReveal()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
